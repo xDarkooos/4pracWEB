@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Practice 4</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <style>
+      body {
+      font-family: Arial, sans-serif;
+      background: #e9f0f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      display: flex;
+      max-width: 700px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 300px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      flex: 1;
+      position: relative;
+    }
+
+    .card-content h2 {
+      font-size: 20px;
+      margin: 0 0 10px;
+      color: #2b2e3a;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      color: #6a6f7a;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .author {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .author-name {
+      font-weight: bold;
+    }
+
+    .author img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .share-btn {
+      background: #eef2f7;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-size: 18px;
+    }
+
+    .share-btn:hover {
+      background: #d6dbe5;
+    }
+
+    .share-menu {
+      position: absolute;
+      bottom: 70px;
+      right: 20px;
+      background: #4b5563;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 10px;
+      display: none;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .share-menu::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      right: 35px;
+      border-width: 10px;
+      border-style: solid;
+      border-color: #4b5563 transparent transparent transparent;
+    }
+
+    .share-menu span {
+      font-size: 13px;
+      letter-spacing: 2px;
+      margin-right: 10px;
+    }
+
+    .share-menu a img {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    .share-menu a {
+      display: flex;
+      align-items: center;
+    }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <img src="article-preview/assets/images/blog_image.png" alt="Article" />
+      <div class="card-content">
+        <h2>
+          Waymo Is A Trillion-Dollar Opportunity. Google Just Needs To Seize It
+        </h2>
+        <p>
+          The self-driving tech unit is expanding but if Alphabet pushed harder,
+          Waymo could dominate a new market with the potential to generate more
+          revenue than its ad business.
+        </p>
+        <div class="card-footer">
+          <div class="author">
+            <img src="article-preview/assets/images/avatar-femail.png" alt="Author" />
+            <span><span class="author-name">Karina Vasylchenko</span><br /><small>29 Sept 2025</small></span>
+          </div>
+          <div class="share-btn" id="shareBtn">🔗</div>
+        </div>
+
+        <div class="share-menu" id="shareMenu">
+          <span>SHARE</span>
+          <a href="https://www.facebook.com" target="_blank">
+            <img src="article-preview/assets/images/facebook.png" alt="Facebook" />
+          </a>
+          <a href="https://twitter.com" target="_blank">
+            <img src="article-preview/assets/images/x.png" alt="X (Twitter)" />
+          </a>
+          <a href="https://pinterest.com" target="_blank">
+            <img src="article-preview/assets/images/pinterest.png" alt="Pinterest" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const shareBtn = document.getElementById("shareBtn");
+      const shareMenu = document.getElementById("shareMenu");
+
+      shareBtn.addEventListener("click", () => {
+        shareMenu.style.display =
+          shareMenu.style.display === "flex" ? "none" : "flex";
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!shareBtn.contains(e.target) && !shareMenu.contains(e.target)) {
+          shareMenu.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
