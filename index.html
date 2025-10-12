@@ -132,6 +132,40 @@
       display: flex;
       align-items: center;
     }
+
+    @media (max-width: 600px) {
+      body {
+        height: auto;
+        padding: 20px;
+      }
+
+      .card {
+        flex-direction: column;
+        max-width: 100%;
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .card-content h2 {
+        font-size: 18px;
+      }
+
+      .card-content p {
+        font-size: 13px;
+      }
+
+      .share-menu {
+        right: 10px;
+        bottom: 60px;
+      }
+    }
     </style>
   </head>
 
